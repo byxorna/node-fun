@@ -1,7 +1,7 @@
 node-fun
 ========
 
-Just screwing around with node
+Code snippets from walking through the "Node: Up and Running" book
 
 Build Notes
 -----------
