@@ -1,5 +1,5 @@
 var net = require('net');
-var _ = require('./lib/underscore.js');
+var _ = require('underscore');
 
 var server = net.createServer();
 var clients = [];

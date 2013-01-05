@@ -1,0 +1,12 @@
+{
+  "name": "node-fun",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byxorna/node-fun"
+  },
+  "dependencies": {
+    "express": ">1.0",
+    "underscore": "*"
+  }
+}
