@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}.
+  div#application
+    div
+      a(href='#refresh-users')#fetch-button Refresh users
+      a(href='#add-user')#add-user-button Add a user
+    span List of Users 
+    span#total-users
+    div#user-list
+
