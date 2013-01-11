@@ -1,7 +1,7 @@
 
-/**
- * Module dependencies.
- */
+//TODO
+// posting users doesnt send full model
+// use client side router to change state of application
 
 var express = require('express')
   , routes = require('./routes')
@@ -28,9 +28,13 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// get main page
 app.get('/', routes.index);
+
+// routes for handling model interaction
 app.get('/users', user.list);
 app.delete('/users/:id', user.delete);
+app.put('/users/:id', user.create);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
