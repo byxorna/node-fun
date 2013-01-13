@@ -30,10 +30,10 @@ $(function(){
   //view for whole site
   var AppView = Backbone.View.extend({
     el: $('#application'),
-    events: {
-      'click a#fetch-button': 'refresh_users',
-      'click a#add-user-button': 'add_new_user'
-    },
+    //events: {
+    //  'click a#fetch-button': 'refresh_users',
+    //  'click a#add-user-button': 'add_new_user'
+    //},
     initialize: function(){
       this.listenTo(users,'add',this.addUser);
       this.listenTo(users,'all',this.render);
@@ -65,7 +65,21 @@ $(function(){
     }
   });
 
+  //router to handle routing from fragments
+  var AppRouter = Backbone.Router.extend({
+    routes: {
+      'add-user': 'add-user',
+      'refresh-users': 'refresh-users'
+    },
+  });
+
+  var router = new AppRouter;
   var app = new AppView;
+
+  router.on('route:add-user',app.add_new_user);
+  router.on('route:refresh-users',app.refresh_users);
+
+  Backbone.history.start();
 
 });
 
