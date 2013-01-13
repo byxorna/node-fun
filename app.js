@@ -32,9 +32,9 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 // routes for handling model interaction
-app.get('/users', user.list);
-app.delete('/users/:id', user.delete);
-app.put('/users/:id', user.create);
+app.get('/users.:format?', user.list);
+app.delete('/users.:format?/:id', user.delete);
+app.put('/users.:format?/:id', user.create);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
