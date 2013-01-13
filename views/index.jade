@@ -1,13 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}.
-  div#application
-    div
-      a(href='#refresh-users')#fetch-button Refresh users
-      a(href='#add-user')#add-user-button Add a user
-    span List of Users 
-    span#total-users
-    div#user-list
+  div.hero-unit
+    h1= title
+    p Don't expect this to be functional. This is my playground for node, bootstrap, and backbone.
+  div.row
+    div#application
+      div.row
+        div.span4
+          div.row
+            div.span1
+              a(href='#refresh-users')#fetch-button Refresh users
+            div.span1
+              a(href='#add-user')#add-user-button Add a user
+          div.row
+            span List of Users 
+            span#total-users
+            div#user-list
 

@@ -2,17 +2,42 @@ doctype 5
 html
   head
     title= title
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/underscore-min.js')
-    script(src='/javascripts/jquery-1.8.3.min.js')
-    script(src='/javascripts/backbone-min.js')
-    script(src='/javascripts/application.js')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     
+    //templates used in client side rendering
     script(type='text/template')#user-template
-      div
-        span <%= name %>
-        span (<%= id %>)
+      div.row
+        div.span2
+          span <%= name %>
+          span (<%= id %>)
+        div.span
         a(href='#FIXME').delete-user-link Delete User
 
   body
-    block content
+    div.navbar.navbar-inverse.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          a.brand(href='#') Test Project
+          ul.nav
+            li
+              a(href='#test') Hello
+            li.dropdown
+              a.dropdown-toggle(href='#',data-toggle='dropdown') Users
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#refresh-users') Refresh
+                li
+                  a(href='#add-user') Add
+
+    div.container
+      block content
+
+    // all necessary scripts go at the end of the body tag
+    script(src='/javascripts/underscore-min.js')
+    script(src='/javascripts/jquery-1.8.3.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/backbone-min.js')
+    script(src='/javascripts/application.js')
